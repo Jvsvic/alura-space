@@ -2,34 +2,6 @@
 
 {% load static %}
 {% block content %}
-
-    <div class="pagina-inicial">
-        <header class="cabecalho">
-            <img src="{% static 'assets/logo/Logo(2).png' %}" alt="Logo da Alura Space" />
-            <div class="cabecalho__busca">
-                <div class="busca__fundo">
-                    <input class="busca__input" type="text" placeholder="O que você procura?">
-                    <img class="busca__icone" src="{% static 'assets/ícones/1x/search.png' %}" alt="Ícone de busca">
-                </div>
-            </div>
-        </header>
-        <main class="principal">
-            <section class="menu-lateral">
-                <nav class="menu-lateral__navegacao">
-                    <a href="{% url 'index' %}">
-                        <img src="{% static 'assets/ícones/1x/Home - ativo.png' %}" alt="Ícone de home"> Home
-                    </a>
-                    <a href="#">
-                        <img src="{% static 'assets/ícones/1x/Mais vistas - inativo.png' %}" alt="Ícone de mais vistas"> Mais vistas
-                    </a>
-                    <a href="#">
-                        <img src="{% static 'assets/ícones/1x/Novas - inativo.png' %}" alt="Ícone de novas"> Novas
-                    </a>
-                    <a href="#">
-                        <img src="{% static 'assets/ícones/1x/Surpreenda-me - inativo.png' %}" alt="Ícone de surpreenda-me"> Surpreenda-me
-                    </a>
-                </nav>
-            </section>
             <section class="conteudo">
                 <section class="imagem">
                     <div class="imagem__conteudo">
@@ -46,15 +18,4 @@
             </section>
         </main>
     </div>
-    <footer class="rodape">
-        <div class="rodape__icones">
-            <a href="https://twitter.com/AluraOnline" target="_blank">
-                <img src="{% static 'assets/ícones/1x/twitter.png' %}" alt="Ícone do Twitter">
-            </a>
-            <a href="https://www.instagram.com/aluraonline/" target="_blank">
-                <img src="{% static 'assets/ícones/1x/instagram.png' %}" alt="Ícone do Instagram">
-            </a>
-        </div>
-        <p class="rodape__texto">Desenvolvido por Alura</p>
-    </footer>
 {% endblock %}

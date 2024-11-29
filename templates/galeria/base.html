@@ -1,5 +1,5 @@
 {% load static %}
-
+{% include 'galeria/partials/_menu.html' %}
 <!DOCTYPE html>
 <html lang="pt-br">
 
@@ -21,6 +21,9 @@
 
 <body>
     {% block content %}{% endblock %}
+
+    {% include 'galeria/partials/_footer.html' %}
+
 </body>
 </html>
 
