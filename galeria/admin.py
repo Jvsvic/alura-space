@@ -4,6 +4,8 @@ from galeria.models import Fotografia
 class ListandoFotografia(admin.ModelAdmin):
     list_display = ("id", "nome", "legenda")
     list_display_links = ("id", "nome")
-    search_fields = ("nome",)
+    search_fields = ("nome", "categoria",)
+    list_filter = ("categoria",)
+    list_per_page = 10
 
 admin.site.register(Fotografia, ListandoFotografia)
