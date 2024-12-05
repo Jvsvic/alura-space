@@ -2,11 +2,11 @@
 <div class="pagina-inicial">
     <header class="cabecalho">
         <img src="{% static '/assets/logo/Logo(2).png' %}" alt="Logo da Alura Space" />
-        {% for message in messages %}
-        <div class="alert-primary">
-          <p id="messages">{{ message }}</p>
-        </div>
-        {% endfor %}
+    {% for message in messages %}
+      <div class="alert-primary" style="background-color: #f8d7da; color: #721c24; padding: 20px; border-radius: 5px;">
+        <p id="messages" style="font-size: 16px; font-weight: bold;">{{ message }}</p>
+      </div>
+    {% endfor %}
 
         <div class="cabecalho__busca">
             <div class="busca__fundo">
