@@ -25,8 +25,7 @@ def buscar(request):
         nome_buscar = request.GET['buscar'].strip()
         if nome_buscar:
             fotografias = fotografias.filter(nome__icontains=nome_buscar)
-
-    return render(request, 'galeria/buscar.html', {"cards": fotografias})  # Corrigido: fechando o parêntese
+    return render(request, 'galeria/index.html', {"cards": fotografias})  # Corrigido: fechando o parêntese
 
 
 def new_imagem(request):
@@ -56,5 +55,13 @@ def editar_imagem(request, foto_id):
 
 
         return render(request, 'galeria/editar_imagem.html', {'form': form, 'foto_id': foto_id})
-def deletar_imagem(request):
-        pass        
+def deletar_imagem(request, foto_id):
+        fotografia = Fotografia.objects.get(id=foto_id)
+        fotografia.delete()
+        messages.success(request, 'Você deletou uma imagem!')
+        return redirect('index')
+
+def filtro(request, categoria):
+        
+        fotografias = Fotografia.objects.order_by("data").filter(publicada=True, categoria=categoria)
+        return render(request, 'galeria/index.html', {"cards": fotografias})
