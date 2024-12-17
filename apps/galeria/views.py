@@ -62,6 +62,10 @@ def deletar_imagem(request, foto_id):
         return redirect('index')
 
 def filtro(request, categoria):
+        if not request.user.is_authenticated:
+                messages.error(request, 'Você precisa estar logado')
+                return redirect('login')
         
         fotografias = Fotografia.objects.order_by("data").filter(publicada=True, categoria=categoria)
         return render(request, 'galeria/index.html', {"cards": fotografias})
+        
